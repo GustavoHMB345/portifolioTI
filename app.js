@@ -1,5 +1,13 @@
-// app.js
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
+  
+  // ==========================================
+  // 1. LÓGICA DO PAINEL DE STATUS (DROPDOWN)
+  // ==========================================
   const btn = document.getElementById('statusDropdownBtn');
   const dropdown = document.getElementById('statusDropdown');
   const toggles = document.querySelectorAll('.toggle-service');
@@ -59,8 +67,47 @@ document.addEventListener('DOMContentLoaded', () => {
       globalPing.classList.add('bg-yellow-400');
       globalStatus.classList.add('bg-yellow-500');
       globalPing.style.display = 'block';
-      systemMessage.textContent = 'Instabilidade detectada em alguns serviços.';
+      systemMessage.textContent = 'Instabilidade detetada em alguns serviços.';
       systemMessage.className = 'text-[10px] text-yellow-400';
     }
   }
+
+
+  // ==========================================
+  // 2. LÓGICA DOS FILTROS DE CATEGORIA
+  // ==========================================
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      
+      // A. Remover o estilo ativo (Amarelo) de todos os botões e repor o estilo base
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-bright-yellow', 'text-bright-dark');
+        b.classList.add('bg-bright-card', 'text-gray-300', 'border-white/10', 'hover:bg-white/10');
+      });
+
+      // B. Adicionar o estilo ativo (Amarelo) APENAS ao botão que foi clicado
+      btn.classList.remove('bg-bright-card', 'text-gray-300', 'border-white/10', 'hover:bg-white/10');
+      btn.classList.add('bg-bright-yellow', 'text-bright-dark');
+
+      // C. Obter o valor do filtro escolhido (ex: 'pedagogico', 'financeiro')
+      const filterValue = btn.getAttribute('data-filter');
+
+      // D. Percorrer todos os cartões e verificar se devem aparecer ou não
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        
+        // Se escolheu 'todos' ou se a categoria do cartão corresponde ao botão
+        if (filterValue === 'todos' || filterValue === category) {
+          card.style.display = 'flex'; // Usamos flex porque o Tailwind usa 'flex-col' nestes cartões
+        } else {
+          card.style.display = 'none'; // Oculta os restantes
+        }
+      });
+      
+    });
+  });
+
 });

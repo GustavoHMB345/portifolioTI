@@ -4,10 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bright Bee IT Portfolio - Inovação & Governança</title>
-  
+
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <script src="tailwind.config.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            bright: {
+              yellow: '#ffc20e',
+              orange: '#f68c3d',
+              dark: '#414042',
+              brown: '#554239',
+              red: '#ef464b',
+              purple: '#512f89',
+              cyan: '#00a1ac',
+              green: '#476972',
+              bg: '#1f1f22', 
+              card: '#27272a' 
+            }
+          }
+        }
+      }
+    }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,7 +123,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </nav>
@@ -127,27 +159,32 @@
       </div>
 
       <div class="flex flex-wrap gap-3 mb-10">
-        <button class="px-4 py-2 rounded-lg bg-bright-yellow text-bright-dark font-medium text-sm transition-colors">Todos</button>
-        <button class="px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Pedagógico</button>
-        <button class="px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Financeiro</button>
-        <button class="px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Infraestrutura</button>
+        <button data-filter="todos" class="filter-btn px-4 py-2 rounded-lg bg-bright-yellow text-bright-dark font-medium text-sm transition-colors">Todos</button>
+        <button data-filter="pedagogico" class="filter-btn px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Pedagógico</button>
+        <button data-filter="financeiro" class="filter-btn px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Financeiro</button>
+        <button data-filter="infraestrutura" class="filter-btn px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Infraestrutura</button>
+        <button data-filter="suporte" class="filter-btn px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Suporte</button>
+        <button data-filter="patrimonio" class="filter-btn px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Patrimônio</button>
+        <button data-filter="academico" class="filter-btn px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Acadêmico</button>
+        <button data-filter="eventos" class="filter-btn px-4 py-2 rounded-lg bg-bright-card border border-white/10 hover:bg-white/10 text-gray-300 font-medium text-sm transition-colors">Eventos</button>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <article class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+        
+        <article data-category="suporte" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
           <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Dashboard de Analytics" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="Bright Tickets" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
-            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-purple border border-bright-purple/30 shadow-sm">
-              Pedagógico
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-cyan border border-bright-cyan/30 shadow-sm">
+              Suporte
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Portal Acadêmico</h3>
-            <p class="text-gray-400 text-sm mb-6 flex-grow">Gerenciamento de turmas, diário de classe digital e relatórios de desempenho dos alunos em tempo real.</p>
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Bright Tickets</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Sistema de helpdesk para abertura, acompanhamento e resolução de chamados internos de T.I e manutenção.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Python</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Node.js</span>
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">React</span>
               </div>
               <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
@@ -155,20 +192,62 @@
           </div>
         </article>
 
-        <article class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+        <article data-category="patrimonio" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
           <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="App Financeiro" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Bright Inventory" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
-            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-red border border-bright-red/30 shadow-sm">
-              Financeiro
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-orange border border-bright-orange/30 shadow-sm">
+              Patrimônio
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Gestão de Receitas</h3>
-            <p class="text-gray-400 text-sm mb-6 flex-grow">Sistema automatizado de emissão de boletos, conciliação bancária e previsibilidade de caixa.</p>
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Bright Inventory</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Plataforma centralizada para gestão de ativos, controle de estoque de hardware e rastreamento de equipamentos.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Node.js</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Python</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">PostgreSQL</span>
+              </div>
+              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="pedagogico" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+          <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop" alt="Portal PP" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-purple border border-bright-purple/30 shadow-sm">
+              Pedagógico
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Portal PP</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Portal de Práticas Pedagógicas. Acesso exclusivo para o corpo docente gerenciar planos de aula e recursos.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex gap-2">
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Next.js</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Tailwind</span>
+              </div>
+              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="infraestrutura" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+          <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="Reservas de Chromebooks" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-yellow border border-bright-yellow/30 shadow-sm">
+              Infraestrutura
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Reservas Chromebooks</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Sistema automatizado de agendamento de carrinhos móveis de Chromebooks para uso em sala de aula.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex gap-2">
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Apps Script</span>
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">API</span>
               </div>
               <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
@@ -176,21 +255,42 @@
           </div>
         </article>
 
-        <article class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+        <article data-category="academico" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
           <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=800&auto=format&fit=crop" alt="Integração de Sistemas" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800&auto=format&fit=crop" alt="Bright Library" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
-            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-cyan border border-bright-cyan/30 shadow-sm">
-              Infraestrutura
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-red border border-bright-red/30 shadow-sm">
+              Acadêmico
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Workspace Sync</h3>
-            <p class="text-gray-400 text-sm mb-6 flex-grow">Automações internas que integram o Google Workspace com nosso ERP nativo para rotinas do RH.</p>
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Bright Library</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Catálogo digital da biblioteca escolar, facilitando o controle de empréstimos, devoluções e busca no acervo.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Apps Script</span>
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">GCP</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Java</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Spring</span>
+              </div>
+              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="eventos" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+          <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Bright Fair" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-yellow border border-bright-yellow/30 shadow-sm">
+              Eventos
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Bright Fair</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Landing page dinâmica e sistema de inscrições para a feira de ciências e eventos culturais da instituição.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex gap-2">
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">HTML/CSS</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Firebase</span>
               </div>
               <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
             </div>
@@ -203,42 +303,74 @@
   <section id="documentacao" class="py-24 px-6 bg-[#1a1a1c] border-t border-white/5 relative">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-100 mb-4">Central de Documentação</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto">Manuais técnicos, guias de arquitetura e documentação de APIs para manter o ecossistema transparente e escalável.</p>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-4">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-gray-100">Central de Documentação</h2>
+          <span class="bg-bright-yellow/10 text-bright-yellow border border-bright-yellow/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            Em Breve
+          </span>
+        </div>
+        <p class="text-gray-400 max-w-2xl mx-auto">Os nossos manuais técnicos, guias de arquitetura e documentação de APIs estão a ser compilados e estruturados para manter o ecossistema transparente e escalável.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a href="#" class="bg-bright-card p-6 rounded-2xl border border-white/5 hover:bg-white/5 hover:border-white/10 transition-all hover:-translate-y-1 group">
-          <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors border border-blue-500/20">
+        
+        <div class="relative bg-bright-card/30 p-6 rounded-2xl border border-dashed border-white/10 opacity-80 cursor-not-allowed overflow-hidden">
+          <div class="absolute inset-0 bg-[#1a1a1c]/40 backdrop-blur-[1.5px] z-10 flex items-center justify-center">
+            <span class="bg-black/80 text-gray-300 border border-white/10 px-4 py-1.5 rounded-lg text-xs font-semibold tracking-wide flex items-center gap-2 shadow-lg">
+              <svg class="w-4 h-4 text-bright-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              A ser implementado
+            </span>
+          </div>
+          <div class="w-12 h-12 bg-blue-500/10 text-blue-400/50 rounded-xl flex items-center justify-center text-2xl mb-4 border border-blue-500/10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
           </div>
-          <h3 class="font-bold text-gray-200 mb-2 group-hover:text-white transition-colors">API Reference</h3>
-          <p class="text-sm text-gray-500 line-clamp-2">Endpoints RESTful e guias de integração.</p>
-        </a>
+          <h3 class="font-bold text-gray-500 mb-2">API Reference</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">Endpoints RESTful e guias de integração.</p>
+        </div>
 
-        <a href="#" class="bg-bright-card p-6 rounded-2xl border border-white/5 hover:bg-white/5 hover:border-white/10 transition-all hover:-translate-y-1 group">
-          <div class="w-12 h-12 bg-bright-yellow/10 text-bright-yellow rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-bright-yellow group-hover:text-bright-dark transition-colors border border-bright-yellow/20">
+        <div class="relative bg-bright-card/30 p-6 rounded-2xl border border-dashed border-white/10 opacity-80 cursor-not-allowed overflow-hidden">
+          <div class="absolute inset-0 bg-[#1a1a1c]/40 backdrop-blur-[1.5px] z-10 flex items-center justify-center">
+            <span class="bg-black/80 text-gray-300 border border-white/10 px-4 py-1.5 rounded-lg text-xs font-semibold tracking-wide flex items-center gap-2 shadow-lg">
+              <svg class="w-4 h-4 text-bright-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              A ser implementado
+            </span>
+          </div>
+          <div class="w-12 h-12 bg-bright-yellow/10 text-bright-yellow/50 rounded-xl flex items-center justify-center text-2xl mb-4 border border-bright-yellow/10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
           </div>
-          <h3 class="font-bold text-gray-200 mb-2 group-hover:text-white transition-colors">Arquitetura de Dados</h3>
-          <p class="text-sm text-gray-500 line-clamp-2">Modelos de banco, schemas e fluxo de informações.</p>
-        </a>
+          <h3 class="font-bold text-gray-500 mb-2">Arquitetura de Dados</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">Modelos de banco, schemas e fluxo de informações.</p>
+        </div>
 
-        <a href="#" class="bg-bright-card p-6 rounded-2xl border border-white/5 hover:bg-white/5 hover:border-white/10 transition-all hover:-translate-y-1 group">
-          <div class="w-12 h-12 bg-bright-red/10 text-bright-red rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-bright-red group-hover:text-white transition-colors border border-bright-red/20">
+        <div class="relative bg-bright-card/30 p-6 rounded-2xl border border-dashed border-white/10 opacity-80 cursor-not-allowed overflow-hidden">
+          <div class="absolute inset-0 bg-[#1a1a1c]/40 backdrop-blur-[1.5px] z-10 flex items-center justify-center">
+            <span class="bg-black/80 text-gray-300 border border-white/10 px-4 py-1.5 rounded-lg text-xs font-semibold tracking-wide flex items-center gap-2 shadow-lg">
+              <svg class="w-4 h-4 text-bright-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              A ser implementado
+            </span>
+          </div>
+          <div class="w-12 h-12 bg-bright-red/10 text-bright-red/50 rounded-xl flex items-center justify-center text-2xl mb-4 border border-bright-red/10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
           </div>
-          <h3 class="font-bold text-gray-200 mb-2 group-hover:text-white transition-colors">Segurança & LGPD</h3>
-          <p class="text-sm text-gray-500 line-clamp-2">Criptografia, anonimização e conformidade de dados.</p>
-        </a>
+          <h3 class="font-bold text-gray-500 mb-2">Segurança & LGPD</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">Criptografia, anonimização e conformidade de dados.</p>
+        </div>
 
-        <a href="#" class="bg-bright-card p-6 rounded-2xl border border-white/5 hover:bg-white/5 hover:border-white/10 transition-all hover:-translate-y-1 group">
-          <div class="w-12 h-12 bg-bright-purple/10 text-bright-purple rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-bright-purple group-hover:text-white transition-colors border border-bright-purple/20">
+        <div class="relative bg-bright-card/30 p-6 rounded-2xl border border-dashed border-white/10 opacity-80 cursor-not-allowed overflow-hidden">
+          <div class="absolute inset-0 bg-[#1a1a1c]/40 backdrop-blur-[1.5px] z-10 flex items-center justify-center">
+            <span class="bg-black/80 text-gray-300 border border-white/10 px-4 py-1.5 rounded-lg text-xs font-semibold tracking-wide flex items-center gap-2 shadow-lg">
+              <svg class="w-4 h-4 text-bright-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              A ser implementado
+            </span>
+          </div>
+          <div class="w-12 h-12 bg-bright-purple/10 text-bright-purple/50 rounded-xl flex items-center justify-center text-2xl mb-4 border border-bright-purple/10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
           </div>
-          <h3 class="font-bold text-gray-200 mb-2 group-hover:text-white transition-colors">UI/UX Guidelines</h3>
-          <p class="text-sm text-gray-500 line-clamp-2">Padrões visuais, componentes e tokens da Bright School.</p>
-        </a>
+          <h3 class="font-bold text-gray-500 mb-2">UI/UX Guidelines</h3>
+          <p class="text-sm text-gray-600 line-clamp-2">Padrões visuais, componentes e tokens da instituição.</p>
+        </div>
+
       </div>
     </div>
   </section>
