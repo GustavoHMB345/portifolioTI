@@ -1,0 +1,47 @@
+/* style.css */
+
+/* Glassmorphism Suave */
+.glass-nav {
+  background: rgba(31, 31, 34, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  background: rgba(65, 64, 66, 0.4); 
+  border-color: rgba(255, 194, 14, 0.3); 
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3);
+}
+
+.project-image-wrapper {
+  overflow: hidden;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-image {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animação do Ping de Status */
+@keyframes ping-slow {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1f1f22; }
+::-webkit-scrollbar-thumb { background: #414042; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #f68c3d; }

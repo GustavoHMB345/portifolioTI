@@ -4,86 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bright Bee IT Portfolio - Inovação & Governança</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="tailwind.config.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            heading: ['Space Grotesk', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            bright: {
-              yellow: '#ffc20e',
-              orange: '#f68c3d',
-              dark: '#414042',
-              brown: '#554239',
-              red: '#ef464b',
-              purple: '#512f89',
-              cyan: '#00a1ac',
-              green: '#476972',
-              bg: '#1f1f22', 
-              card: '#27272a' 
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    /* Glassmorphism Suave */
-    .glass-nav {
-      background: rgba(31, 31, 34, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    
-    .project-card {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    
-    .project-card:hover {
-      transform: translateY(-6px);
-      background: rgba(65, 64, 66, 0.4); 
-      border-color: rgba(255, 194, 14, 0.3); 
-      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3);
-    }
-
-    .project-image-wrapper {
-      overflow: hidden;
-    }
-
-    .project-card:hover .project-image {
-      transform: scale(1.05);
-    }
-
-    .project-image {
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Animação do Ping de Status */
-    @keyframes ping-slow {
-      75%, 100% { transform: scale(2); opacity: 0; }
-    }
-    .animate-ping-slow {
-      animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #1f1f22; }
-    ::-webkit-scrollbar-thumb { background: #414042; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: #f68c3d; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-bright-bg text-gray-300 antialiased selection:bg-bright-yellow selection:text-bright-dark relative min-h-screen">
@@ -351,76 +281,6 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('statusDropdownBtn');
-      const dropdown = document.getElementById('statusDropdown');
-      const toggles = document.querySelectorAll('.toggle-service');
-      const globalStatus = document.getElementById('globalStatus');
-      const globalPing = document.getElementById('globalPing');
-      const systemMessage = document.getElementById('systemMessage');
-
-      // Abre/Fecha Dropdown
-      btn.addEventListener('click', (e) => {
-        dropdown.classList.toggle('hidden');
-        e.stopPropagation();
-      });
-
-      // Fecha clicando fora
-      document.addEventListener('click', (e) => {
-        if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
-          dropdown.classList.add('hidden');
-        }
-      });
-
-      // Lógica dos toggles e atualização global
-      toggles.forEach(toggle => {
-        toggle.addEventListener('change', (e) => {
-          // Muda a cor da bolinha indicadora do serviço específico
-          const indicator = e.target.closest('.flex.justify-between').querySelector('.service-indicator');
-          if (e.target.checked) {
-            indicator.classList.remove('bg-red-500');
-            indicator.classList.add('bg-green-500');
-          } else {
-            indicator.classList.remove('bg-green-500');
-            indicator.classList.add('bg-red-500');
-          }
-          updateGlobalStatus();
-        });
-      });
-
-      function updateGlobalStatus() {
-        const activeCount = document.querySelectorAll('.toggle-service:checked').length;
-        const totalCount = toggles.length;
-
-        // Reset classes
-        globalPing.classList.remove('bg-green-400', 'bg-yellow-400', 'bg-red-400');
-        globalStatus.classList.remove('bg-green-500', 'bg-yellow-500', 'bg-red-500');
-
-        if (activeCount === totalCount) {
-          // Tudo normal
-          globalPing.classList.add('bg-green-400');
-          globalStatus.classList.add('bg-green-500');
-          globalPing.style.display = 'block';
-          systemMessage.textContent = 'Todos os sistemas operacionais.';
-          systemMessage.className = 'text-[10px] text-green-400';
-        } else if (activeCount === 0) {
-          // Tudo offline
-          globalPing.classList.add('bg-red-400');
-          globalStatus.classList.add('bg-red-500');
-          globalPing.style.display = 'none'; // Para de pulsar
-          systemMessage.textContent = 'Interrupção total dos serviços.';
-          systemMessage.className = 'text-[10px] text-red-400';
-        } else {
-          // Alerta parcial
-          globalPing.classList.add('bg-yellow-400');
-          globalStatus.classList.add('bg-yellow-500');
-          globalPing.style.display = 'block';
-          systemMessage.textContent = 'Instabilidade detectada em alguns serviços.';
-          systemMessage.className = 'text-[10px] text-yellow-400';
-        }
-      }
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
