@@ -47,8 +47,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body class="bg-bright-bg text-gray-300 antialiased selection:bg-bright-yellow selection:text-bright-dark relative min-h-screen">
 
   <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
@@ -375,43 +376,101 @@
     </div>
   </section>
 
-  <footer class="bg-bright-dark pt-16 pb-8 px-6 border-t border-white/5">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-gray-700/50 pb-12 mb-8">
-      <div class="md:col-span-1">
-        <div class="flex items-center gap-2 mb-4">
-          <span class="text-2xl opacity-90">🐝</span>
-          <span class="font-heading text-xl font-bold text-gray-100">Bright Bee</span>
-        </div>
-        <p class="text-sm text-gray-400">Departamento de Tecnologia da Informação. Construindo as bases para o futuro da educação.</p>
+  <footer class="footer-container">
+      <div class="color-bar">
+          <div class="bar-red"></div>
+          <div class="bar-purple"></div>
+          <div class="bar-teal"></div>
+          <div class="bar-green"></div>
+          <div class="bar-orange"></div>
+          <div class="bar-light-orange"></div>
+          <div class="bar-yellow"></div>
       </div>
-      <div>
-        <h4 class="font-semibold text-gray-200 mb-4">Ecossistema</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="#" class="hover:text-bright-yellow transition-colors">Portais Educacionais</a></li>
-          <li><a href="#" class="hover:text-bright-yellow transition-colors">Painel Financeiro</a></li>
-          <li><a href="#" class="hover:text-bright-yellow transition-colors">Automação RH</a></li>
-        </ul>
+
+      <div class="footer-content flex-layout relative">
+          
+          <div class="footer-logo-wrapper">
+              <img src="logo.png" alt="Bright Bee Logo" class="footer-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="fallback-logo" style="display: none; flex-direction: column; align-items: center; gap: 4px; padding-top: 20px;">
+                  <span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: bold; color: white; text-align: center; line-height: 1;">Bright<br>Bee</span>
+              </div>
+          </div>
+
+          <div class="footer-grid">
+              <div class="footer-column info-empresa">
+                  <p class="description">
+                      Uma escola dedicada ao ensino infantil e fundamental que traz proposta inovadora e pioneira ao estado do Piauí.
+                  </p>
+                  <a href="https://www.brightbee.com.br/agende-sua-visita/" class="btn-agendar">Agende sua visita</a>
+              </div>
+
+              <div class="footer-column">
+                  <h3>ENDEREÇO</h3>
+                  <h3 class="subtitle">Teresina</h3>
+                  <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span>R. Anfrísio Lobão, 2024 – São Cristóvão, Teresina/PI – 64051-152</span>
+                  </div>
+                  <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span>R. Desembargador Manoel Castelo Branco, 2039 – São Cristóvão, Teresina/PI</span>
+                  </div>
+                  <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span>R. Anfrísio Lobão, 1794 – São Cristóvão, Teresina/PI – 64049-280</span>
+                  </div>
+                  <h3 class="subtitle">Anápolis</h3>
+                  <div class="info-item">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <span>R. Arlindo Costa, 91 – Jundiaí, Anápolis – GO, 75113-200</span>
+                  </div>
+              </div>
+
+              <div class="footer-column hide-mobile">
+                  <h3>A ESCOLA</h3>
+                  <a href="https://www.brightbee.com.br/quem-somos/">Quem somos</a>
+                  <a href="https://www.brightbee.com.br/proposta-pedagogica/">Proposta pedagógica</a>
+                  <a href="https://www.brightbee.com.br/educacao-infantil/">Educação Infantil</a>
+                  <a href="https://www.brightbee.com.br/ensino-fundamental/">Ensino Fundamental</a>
+                  <a href="https://www.brightbee.com.br/ensino-integral/">Ensino Integral</a>
+              </div>
+
+              <div class="footer-column hide-mobile">
+                  <h3>LINKS ÚTEIS</h3>
+                  <a href="https://www.brightbee.com.br/blog/">Blog</a>
+                  <a href="https://www.brightbee.com.br/faq/">FAQ</a>
+                  <a href="https://atracaodetalentos.totvs.app/brightbee/extended">Trabalhe Conosco</a>
+                  <a href="https://www.brightbee.com.br/contato/">Contato</a>
+                  
+                  <h3 class="title-spacing">TELEFONE</h3>
+                  <div class="info-item">
+                      <i class="fas fa-phone"></i>
+                      <span>(86) 3233-1839</span>
+                  </div>
+              </div>
+
+              <div class="footer-column">
+                  <h3>NOSSAS REDES</h3>
+                  <div class="social-icons">
+                      <a href="https://www.instagram.com/brightbeeeb/"><i class="fab fa-instagram"></i></a>
+                      <a href="https://www.youtube.com/channel/UCJh_8utuPtYVE5MvCh3HYAA"><i class="fab fa-youtube"></i></a>
+                      <a href="https://wa.me/5586994084588"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+                  
+                  <h3 class="title-spacing">TERMOS DE USO</h3>
+                  <a href="https://www.brightbee.com.br/aviso-de-privacidade/">Política de Privacidade</a>
+              </div>
+          </div>
       </div>
-      <div>
-        <h4 class="font-semibold text-gray-200 mb-4">Desenvolvedores</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="#" class="hover:text-bright-yellow transition-colors">Repositórios Git</a></li>
-          <li><a href="#" class="hover:text-bright-yellow transition-colors">Design System</a></li>
-          <li><a href="#" class="hover:text-bright-yellow transition-colors">Status da API</a></li>
-        </ul>
+
+      <div class="copyright">
+          <p>© 2025. Bright Bee. Todos os direitos reservados.</p>
       </div>
-      <div>
-        <h4 class="font-semibold text-gray-200 mb-4">Suporte</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="#" class="hover:text-bright-yellow transition-colors">Abrir Chamado</a></li>
-          <li><a href="#" class="hover:text-bright-yellow transition-colors">Base de Conhecimento</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="max-w-7xl mx-auto text-center text-xs text-gray-500">
-      &copy; 2026 Bright Bee IT Department. Todos os direitos reservados.
-    </div>
   </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
 
   <script src="app.js"></script>
 </body>

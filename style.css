@@ -45,3 +45,207 @@
 ::-webkit-scrollbar-track { background: #1f1f22; }
 ::-webkit-scrollbar-thumb { background: #414042; border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: #f68c3d; }
+
+:root {
+    --footer-bg: #1a1a1c; /* Combina com a seção de Documentação logo acima */
+    --accent-color: #f68c3d;
+    --text-color: rgba(255, 255, 255, 0.7);
+    --title-color: #ffffff;
+}
+
+.footer-container {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--footer-bg);
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Pequena borda de separação */
+}
+
+/* Barra Colorida */
+.color-bar {
+    display: flex;
+    height: 6px;
+    width: 100%;
+}
+.color-bar div { flex: 1; }
+.bar-red { background: #ef464b; }
+.bar-purple { background: #512f89; }
+.bar-teal { background: #00a1ac; }
+.bar-green { background: #476972; } /* Verde do manual da marca */
+.bar-orange { background: #e45e26; }
+.bar-light-orange { background: #f68c3d; }
+.bar-yellow { background: #ffc20e; }
+
+/* Conteúdo Base - Usa Flexbox para separar o Logo do Texto */
+.footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 32px 50px 32px; /* Sem padding no topo para o escudo encostar */
+    display: flex;
+    gap: 50px; /* Distância entre a bandeirola e as colunas de texto */
+    align-items: flex-start;
+}
+
+/* O Wrapper aplica a sombra, porque o clip-path corta o box-shadow normal */
+.footer-logo-wrapper {
+    filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.4));
+    margin-top: -6px; /* Sobe exatamente os 6px para sobrepor a barra colorida */
+    flex-shrink: 0;
+}
+
+/* A forma geométrica de Bandeirola/Escudo do Logo */
+.footer-logo-pennant {
+    background-color: white;
+    width: 140px;
+    padding: 25px 20px 45px 20px; /* Espaço extra embaixo para o 'bico' */
+    clip-path: polygon(0 0, 100% 0, 100% 82%, 50% 100%, 0 82%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Grid de Textos */
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    flex-grow: 1;
+    padding-top: 50px; /* Empurra os textos para baixo para ficarem perfeitamente alinhados na horizontal */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-empresa { 
+    min-width: 220px;
+}
+
+/* Tipografia */
+.footer-column h3 {
+    color: var(--title-color);
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+}
+
+.footer-column .subtitle {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.footer-column a, .footer-column p, .info-item {
+    color: var(--text-color);
+    font-size: 13px;
+    text-decoration: none;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    transition: color 0.3sEase;
+}
+
+.footer-column a:hover { color: white; }
+
+/* Itens com Ícone */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.info-item i {
+    font-size: 13px;
+    margin-top: 3px;
+    width: 15px;
+}
+
+/* Botão CORRIGIDO */
+.btn-agendar {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 13px;
+    width: fit-content;
+    margin-top: 10px;
+    transition: background-color 0.3sEase, transform 0.2sEase;
+}
+
+.btn-agendar:hover {
+    background-color: #ffc20e;
+    transform: translateY(-2px);
+}
+
+/* Redes Sociais */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.social-icons a { 
+    font-size: 18px; 
+    transition: color 0.3sEase, transform 0.2sEase;
+}
+.social-icons a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.title-spacing { margin-top: 15px; }
+
+/* Copyright */
+.copyright {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.copyright p {
+    color: rgba(255,255,255,0.54);
+    font-size: 11px;
+    margin: 0;
+}
+
+/* Responsividade (Mobile < 900px) */
+@media (max-width: 900px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .footer-logo-wrapper {
+        margin-top: -6px; /* Continua preso ao topo */
+    }
+    
+    .footer-grid {
+        padding-top: 20px;
+    }
+    
+    .footer-column {
+        flex: 1 1 100%;
+    }
+    
+    .info-empresa {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .hide-mobile {
+        display: none;
+    }
+    
+    .btn-agendar {
+        display: none;
+    }
+}
