@@ -13,41 +13,13 @@
   </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            heading: ['Space Grotesk', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            bright: {
-              yellow: '#ffc20e',
-              orange: '#f68c3d',
-              dark: '#414042',
-              brown: '#554239',
-              red: '#ef464b',
-              purple: '#512f89',
-              cyan: '#00a1ac',
-              green: '#476972',
-              bg: '#1f1f22', 
-              card: '#27272a' 
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <script src="config/tailwind.config.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="src/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-bright-bg text-gray-300 antialiased selection:bg-bright-yellow selection:text-bright-dark relative min-h-screen">
@@ -59,12 +31,19 @@
 
   <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-bright-yellow rounded-xl flex items-center justify-center shadow-lg shadow-bright-yellow/10">
-          <span class="font-heading font-bold text-bright-dark text-xl">🐝</span>
+        <img src="assets/images/abelha_logo.png" alt="Bright Bee Logo" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        
+        <div class="fallback-logo" style="display: none; align-items: center; gap: 8px;">
+            <span style="font-size: 28px; line-height: 1;">🐝</span>
+            <span style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: bold; color: white; line-height: 1;">Bright Bee</span>
         </div>
+
+        <div class="h-6 w-px bg-white/20 mx-1"></div>
         <span class="font-heading text-xl font-bold text-gray-100 tracking-tight">Bright Bee IT</span>
       </div>
+
       <div class="hidden md:flex gap-8 items-center">
         <a href="#projetos" class="text-gray-400 hover:text-bright-yellow transition-colors font-medium text-sm">Projetos</a>
         <a href="#documentacao" class="text-gray-400 hover:text-bright-yellow transition-colors font-medium text-sm">Documentação</a>
@@ -131,13 +110,13 @@
   <header class="pt-48 pb-24 px-6 relative overflow-hidden flex flex-col items-center text-center">
     <div class="relative z-10 max-w-4xl mx-auto">
       <span class="inline-block py-1.5 px-4 rounded-full bg-bright-dark text-bright-yellow text-xs font-semibold tracking-wider uppercase mb-8 border border-bright-yellow/20">
-        Engenharia & UX Institucional
+        Desenvolvimento & UX Institucional
       </span>
       <h1 class="font-heading text-5xl md:text-7xl font-bold text-gray-100 mb-6 tracking-tight leading-tight">
         Inovação e <span class="text-transparent bg-clip-text bg-gradient-to-r from-bright-yellow to-bright-orange">Governança Digital</span>
       </h1>
       <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Estante de projetos e soluções tecnológicas desenvolvidas para a gestão administrativa, pedagógica e infraestrutura da Bright School.
+        Estante de projetos e soluções tecnológicas desenvolvidas para a gestão administrativa, pedagógica e infraestrutura da Bright Bee School.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#projetos" class="bg-bright-yellow text-bright-dark px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg hover:bg-yellow-400 hover:-translate-y-0.5">
@@ -174,21 +153,21 @@
         
         <article data-category="suporte" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
           <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="Bright Tickets" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="Dashboard de Chamados" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
             <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-cyan border border-bright-cyan/30 shadow-sm">
               Suporte
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Bright Tickets</h3>
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Dashboard de Chamados</h3>
             <p class="text-gray-400 text-sm mb-6 flex-grow">Sistema de helpdesk para abertura, acompanhamento e resolução de chamados internos de T.I e manutenção.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Node.js</span>
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">React</span>
               </div>
-              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+              <button data-id="chamados" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
           </div>
         </article>
@@ -209,7 +188,7 @@
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Python</span>
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">PostgreSQL</span>
               </div>
-              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+              <button data-id="inventory" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
           </div>
         </article>
@@ -230,7 +209,7 @@
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Next.js</span>
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Tailwind</span>
               </div>
-              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+              <button data-id="portal-pp" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
           </div>
         </article>
@@ -251,28 +230,28 @@
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Apps Script</span>
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">API</span>
               </div>
-              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+              <button data-id="reservas" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
           </div>
         </article>
 
         <article data-category="academico" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
           <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800&auto=format&fit=crop" alt="Bright Library" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <img src="assets/images/library_capa.png" alt="School Library" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
             <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-red border border-bright-red/30 shadow-sm">
               Acadêmico
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
-            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Bright Library</h3>
-            <p class="text-gray-400 text-sm mb-6 flex-grow">Catálogo digital da biblioteca escolar, facilitando o controle de empréstimos, devoluções e busca no acervo.</p>
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">School Library</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Catálogo digital e sistema de gestão bibliotecária para controle de acervo e empréstimos.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Java</span>
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Spring</span>
               </div>
-              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+              <button data-id="library" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
           </div>
         </article>
@@ -293,7 +272,7 @@
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">HTML/CSS</span>
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Firebase</span>
               </div>
-              <a href="#" class="text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors">Ver Mais <span class="text-lg">→</span></a>
+              <button data-id="fair" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
           </div>
         </article>
@@ -314,7 +293,7 @@
         <p class="text-gray-400 max-w-2xl mx-auto">Os nossos manuais técnicos, guias de arquitetura e documentação de APIs estão a ser compilados e estruturados para manter o ecossistema transparente e escalável.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         
         <div class="relative bg-bright-card/30 p-6 rounded-2xl border border-dashed border-white/10 opacity-80 cursor-not-allowed overflow-hidden">
           <div class="absolute inset-0 bg-[#1a1a1c]/40 backdrop-blur-[1.5px] z-10 flex items-center justify-center">
@@ -351,20 +330,6 @@
               A ser implementado
             </span>
           </div>
-          <div class="w-12 h-12 bg-bright-red/10 text-bright-red/50 rounded-xl flex items-center justify-center text-2xl mb-4 border border-bright-red/10">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-          </div>
-          <h3 class="font-bold text-gray-500 mb-2">Segurança & LGPD</h3>
-          <p class="text-sm text-gray-600 line-clamp-2">Criptografia, anonimização e conformidade de dados.</p>
-        </div>
-
-        <div class="relative bg-bright-card/30 p-6 rounded-2xl border border-dashed border-white/10 opacity-80 cursor-not-allowed overflow-hidden">
-          <div class="absolute inset-0 bg-[#1a1a1c]/40 backdrop-blur-[1.5px] z-10 flex items-center justify-center">
-            <span class="bg-black/80 text-gray-300 border border-white/10 px-4 py-1.5 rounded-lg text-xs font-semibold tracking-wide flex items-center gap-2 shadow-lg">
-              <svg class="w-4 h-4 text-bright-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              A ser implementado
-            </span>
-          </div>
           <div class="w-12 h-12 bg-bright-purple/10 text-bright-purple/50 rounded-xl flex items-center justify-center text-2xl mb-4 border border-bright-purple/10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
           </div>
@@ -373,27 +338,15 @@
         </div>
 
       </div>
-    </div>
   </section>
 
   <footer class="footer-container">
-      <div class="color-bar">
-          <div class="bar-red"></div>
-          <div class="bar-purple"></div>
-          <div class="bar-teal"></div>
-          <div class="bar-green"></div>
-          <div class="bar-orange"></div>
-          <div class="bar-light-orange"></div>
-          <div class="bar-yellow"></div>
-      </div>
+      <div class="color-bar"></div>
 
-      <div class="footer-content flex-layout relative">
+      <div class="footer-content">
           
           <div class="footer-logo-wrapper">
-              <img src="logo.png" alt="Bright Bee Logo" class="footer-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="fallback-logo" style="display: none; flex-direction: column; align-items: center; gap: 4px; padding-top: 20px;">
-                  <span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: bold; color: white; text-align: center; line-height: 1;">Bright<br>Bee</span>
-              </div>
+              <img src="assets/images/logo.png" alt="Bright Bee Logo" class="footer-logo">
           </div>
 
           <div class="footer-grid">
@@ -464,14 +417,76 @@
       </div>
 
       <div class="copyright">
-          <p>© 2025. Bright Bee. Todos os direitos reservados.</p>
+          <p>© 2026. Bright Bee. Todos os direitos reservados.</p>
       </div>
   </footer>
 
-  <script src="app.js"></script>
-</body>
-</html>
+  <div id="projectModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 transition-all duration-300 opacity-0 pointer-events-none">
+      <div class="absolute inset-0 bg-black/80 backdrop-blur-sm modal-close cursor-pointer"></div>
 
-  <script src="app.js"></script>
+      <div id="modalContentBox" class="relative bg-bright-card border border-white/10 rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300">
+          
+          <button class="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center bg-black/50 hover:bg-bright-red text-white rounded-full transition-colors modal-close focus:outline-none">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+
+          <div class="h-64 sm:h-80 w-full relative shrink-0">
+              <img id="modalCover" src="" alt="Capa" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-bright-card via-bright-card/80 to-transparent opacity-90"></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                  <span id="modalCategory" class="px-3 py-1.5 rounded-md text-xs font-semibold border shadow-sm mb-3 inline-block bg-black/40 backdrop-blur-md">Categoria</span>
+                  <h2 id="modalTitle" class="font-heading text-3xl md:text-5xl font-bold text-white">Nome do Projeto</h2>
+              </div>
+          </div>
+
+          <div class="p-6 sm:p-8 overflow-y-auto flex-grow custom-scrollbar">
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  
+                  <div class="lg:col-span-2 space-y-8">
+                      <div>
+                          <h4 class="text-lg font-bold text-white mb-3">Sobre a Aplicação</h4>
+                          <p id="modalDesc" class="text-gray-400 text-sm leading-relaxed whitespace-pre-line"></p>
+                      </div>
+                      <div>
+                          <h4 class="text-lg font-bold text-white mb-4">Telas do Sistema</h4>
+                          <div id="modalGallery" class="grid grid-cols-2 gap-4">
+                              </div>
+                      </div>
+                  </div>
+
+                  <div class="space-y-6">
+                      <div class="bg-black/30 p-5 rounded-xl border border-white/5">
+                          <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Stack Tecnológica</h4>
+                          <div id="modalTech" class="flex flex-wrap gap-2">
+                              </div>
+                      </div>
+
+                      <div class="space-y-3 pt-4">
+                          <a href="#" id="modalAppBtn" target="_blank" class="w-full flex items-center justify-center gap-2 bg-bright-yellow hover:bg-yellow-400 text-bright-dark font-bold py-3 rounded-xl transition-transform hover:-translate-y-1 shadow-lg shadow-bright-yellow/20">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                              Acessar Sistema
+                          </a>
+                          <a href="#" id="modalDocsBtn" class="w-full flex items-center justify-center gap-2 bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10 hover:text-white font-semibold py-3 rounded-xl transition-colors">
+                              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                              Ler Documentação
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="imageLightbox" class="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-10 transition-all duration-300 opacity-0 pointer-events-none">
+      
+      <div class="absolute inset-0 bg-black/95 backdrop-blur-md lightbox-close cursor-pointer"></div>
+
+      <button class="absolute top-6 right-6 z-20 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-bright-red text-white rounded-full transition-all lightbox-close focus:outline-none hover:rotate-90">
+          <i class="fas fa-times text-2xl"></i>
+      </button>
+
+      <img id="lightboxImage" src="" alt="Imagem Ampliada" class="relative z-10 max-w-full max-h-full object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+  </div>
+
+  <script src="src/js/app.js"></script>
 </body>
 </html>

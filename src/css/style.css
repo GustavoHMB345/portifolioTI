@@ -47,60 +47,49 @@
 ::-webkit-scrollbar-thumb:hover { background: #f68c3d; }
 
 :root {
-    --footer-bg: #1a1a1c; /* Combina com a seção de Documentação logo acima */
-    --accent-color: #f68c3d;
-    --text-color: rgba(255, 255, 255, 0.7);
-    --title-color: #ffffff;
+    --footer-bg: #1f1f22; 
+    --accent-color: #f68c3d; 
+    --accent-yellow: #ffc20e; 
+    --text-color: #d1d5db; 
+    --title-color: #f3f4f6; 
+    --border-color: rgba(255, 255, 255, 0.05); 
 }
 
 .footer-container {
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--footer-bg);
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Pequena borda de separação */
+    /* Removida a borda superior para a barra colorida brilhar */
 }
 
-/* Barra Colorida */
+/* Barra Colorida Fixa Absoluta no Topo */
 .color-bar {
-    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 6px;
     width: 100%;
+    background: linear-gradient(90deg, #ef464b 0%, #f68c3d 50%, #ffc20e 100%);
+    z-index: 1; /* Fica atrás do conteúdo */
 }
-.color-bar div { flex: 1; }
-.bar-red { background: #ef464b; }
-.bar-purple { background: #512f89; }
-.bar-teal { background: #00a1ac; }
-.bar-green { background: #476972; } /* Verde do manual da marca */
-.bar-orange { background: #e45e26; }
-.bar-light-orange { background: #f68c3d; }
-.bar-yellow { background: #ffc20e; }
 
-/* Conteúdo Base - Usa Flexbox para separar o Logo do Texto */
+/* Conteúdo Base */
 .footer-content {
-    max-width: 1300px;
+    position: relative;
+    z-index: 2; /* Fica por cima da barra colorida */
+    max-width: 1350px; /* Ligeiramente mais largo para acomodar bem as colunas */
     margin: 0 auto;
-    padding: 0 32px 50px 32px; /* Sem padding no topo para o escudo encostar */
+    padding: 0 32px 50px 32px;
     display: flex;
-    gap: 50px; /* Distância entre a bandeirola e as colunas de texto */
+    gap: 40px;
     align-items: flex-start;
 }
 
-/* O Wrapper aplica a sombra, porque o clip-path corta o box-shadow normal */
+/* Wrapper do Logo */
 .footer-logo-wrapper {
-    filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.4));
-    margin-top: -6px; /* Sobe exatamente os 6px para sobrepor a barra colorida */
+    width: 130px;
     flex-shrink: 0;
-}
-
-/* A forma geométrica de Bandeirola/Escudo do Logo */
-.footer-logo-pennant {
-    background-color: white;
-    width: 140px;
-    padding: 25px 20px 45px 20px; /* Espaço extra embaixo para o 'bico' */
-    clip-path: polygon(0 0, 100% 0, 100% 82%, 50% 100%, 0 82%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 0; /* O topo liso do escudo vai bater certinho no topo da barra colorida */
 }
 
 .footer-logo {
@@ -108,52 +97,51 @@
     height: auto;
     object-fit: contain;
     display: block;
+    filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.25)); /* Sombra suave no PNG */
 }
 
-/* Grid de Textos */
+/* Grid de Textos (A solução para as colunas não quebrarem) */
 .footer-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-    flex-grow: 1;
-    padding-top: 50px; /* Empurra os textos para baixo para ficarem perfeitamente alinhados na horizontal */
+    display: grid;
+    grid-template-columns: 1.5fr 1.2fr 1fr 1fr 1fr; /* Força 5 colunas lado a lado no Desktop */
+    gap: 24px;
+    width: 100%;
+    padding-top: 35px; /* Empurra os textos para baixo para alinharem visualmente com o logo */
 }
 
 .footer-column {
-    flex: 1;
-    min-width: 170px;
     display: flex;
     flex-direction: column;
-}
-
-.info-empresa { 
-    min-width: 220px;
 }
 
 /* Tipografia */
 .footer-column h3 {
     color: var(--title-color);
+    font-family: 'Space Grotesk', sans-serif; 
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
     margin: 0 0 12px 0;
+    letter-spacing: 0.5px;
 }
 
 .footer-column .subtitle {
     margin-top: 10px;
     margin-bottom: 5px;
+    color: var(--accent-yellow); 
 }
 
 .footer-column a, .footer-column p, .info-item {
     color: var(--text-color);
     font-size: 13px;
     text-decoration: none;
-    line-height: 1.4;
+    line-height: 1.5;
     margin-bottom: 8px;
-    transition: color 0.3sEase;
+    transition: color 0.3s ease;
 }
 
-.footer-column a:hover { color: white; }
+.footer-column a:hover { 
+    color: var(--accent-yellow); 
+}
 
 /* Itens com Ícone */
 .info-item {
@@ -165,25 +153,29 @@
     font-size: 13px;
     margin-top: 3px;
     width: 15px;
+    color: var(--accent-color); 
 }
 
-/* Botão CORRIGIDO */
+/* Botão Agendar */
 .btn-agendar {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: white !important;
+    background-color: var(--accent-yellow); 
+    color: #1f1f22 !important; 
     padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: bold;
+    border-radius: 8px;
+    font-weight: 600;
     font-size: 13px;
     width: fit-content;
     margin-top: 10px;
-    transition: background-color 0.3sEase, transform 0.2sEase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 194, 14, 0.2);
 }
 
 .btn-agendar:hover {
-    background-color: #ffc20e;
+    background-color: var(--accent-color); 
+    color: white !important;
     transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(246, 140, 61, 0.3);
 }
 
 /* Redes Sociais */
@@ -194,10 +186,11 @@
 }
 .social-icons a { 
     font-size: 18px; 
-    transition: color 0.3sEase, transform 0.2sEase;
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 .social-icons a:hover {
-    color: var(--accent-color);
+    color: var(--accent-yellow);
     transform: translateY(-2px);
 }
 
@@ -205,46 +198,47 @@
 
 /* Copyright */
 .copyright {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 16px;
     text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid var(--border-color);
 }
 .copyright p {
-    color: rgba(255,255,255,0.54);
-    font-size: 11px;
+    color: #9ca3af; 
+    font-size: 12px;
     margin: 0;
 }
 
-/* Responsividade (Mobile < 900px) */
-@media (max-width: 900px) {
+/* Responsividade Aprimorada */
+@media (max-width: 1100px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+    }
+}
+
+@media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        padding: 0 24px 40px 24px;
     }
-    
     .footer-logo-wrapper {
-        margin-top: -6px; /* Continua preso ao topo */
+        margin-top: 20px; /* Desce um pouco o logo no telemóvel */
     }
-    
     .footer-grid {
+        grid-template-columns: 1fr; /* 1 coluna no telemóvel */
+        text-align: center;
         padding-top: 20px;
     }
-    
-    .footer-column {
-        flex: 1 1 100%;
+    .info-item {
+        justify-content: center;
     }
-    
-    .info-empresa {
-        text-align: center;
-        align-items: center;
+    .social-icons {
+        justify-content: center;
     }
-    
     .hide-mobile {
         display: none;
     }
-    
     .btn-agendar {
         display: none;
     }
