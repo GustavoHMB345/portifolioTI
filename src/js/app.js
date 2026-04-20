@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         description: "O Dashboard de Chamados é uma solução de helpdesk para a instituição. Ele centraliza as solicitações de suporte, permitindo que colaboradores abram chamados para a equipe de T.I. ou manutenção predial de forma intuitiva.\n\nPrincipais features:\n• Acompanhamento de SLA em tempo real.\n• Sistema de prioridades automáticas.\n• Dashboard analítico para gestão de gargalos operacionais.",
         techStack: ["Node.js", "React", "Express", "MongoDB"],
         gallery: [
-            "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop"
+            "assets/images/chamados_tela1.png",
+            "assets/images/chamados_tela2.png",
         ]
     },
     "inventory": {
@@ -131,12 +131,23 @@ document.addEventListener('DOMContentLoaded', () => {
         title: "Portal PP",
         category: "Pedagógico",
         catClass: "text-bright-purple border-bright-purple/30",
-        coverImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop",
+        coverImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop",
         description: "O Portal de Práticas Pedagógicas é o hub central dos educadores da Bright School. Permite a elaboração e submissão de planos de aula, compartilhamento de recursos didáticos e alinhamento com a BNCC.\n\nPossui fluxos de aprovação integrados diretamente com a coordenação.",
         techStack: ["Next.js", "Tailwind", "Prisma", "AWS"],
         gallery: [
-            "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600&auto=format&fit=crop"
+            "assets/images/login_pp.png",
+            "assets/images/pp_tela2.png",
+            "assets/images/pp_tela3.png",
+            "assets/images/pp_tela4.png",
+            "assets/images/pp_tela5.png",
+            "assets/images/pp_tela6.png",
+            "assets/images/pp_tela7.png",
+            "assets/images/pp_tela8.png",
+            "assets/images/pp_tela9.png",
+            "assets/images/pp_tela10.png",
+            "assets/images/pp_tela11.png",
+            "assets/images/pp_tela12.png",
+            "assets/images/pp_tela13.png",
         ]
     },
     "reservas": {
