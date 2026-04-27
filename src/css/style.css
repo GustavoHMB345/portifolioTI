@@ -59,7 +59,6 @@
     font-family: 'Inter', sans-serif;
     background-color: var(--footer-bg);
     position: relative;
-    /* Removida a borda superior para a barra colorida brilhar */
 }
 
 /* Barra Colorida Fixa Absoluta no Topo */
@@ -77,36 +76,20 @@
 .footer-content {
     position: relative;
     z-index: 2; /* Fica por cima da barra colorida */
-    max-width: 1350px; /* Ligeiramente mais largo para acomodar bem as colunas */
+    max-width: 1350px; 
     margin: 0 auto;
     padding: 0 32px 50px 32px;
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    /* Removido o display:flex e o gap, pois apagámos o wrapper lateral da logo no HTML */
 }
 
-/* Wrapper do Logo */
-.footer-logo-wrapper {
-    width: 130px;
-    flex-shrink: 0;
-    margin-top: 0; /* O topo liso do escudo vai bater certinho no topo da barra colorida */
-}
-
-.footer-logo {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.25)); /* Sombra suave no PNG */
-}
-
-/* Grid de Textos (A solução para as colunas não quebrarem) */
+/* Grid de Textos */
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1.2fr 1fr 1fr 1fr; /* Força 5 colunas lado a lado no Desktop */
+    /* Alterei o primeiro valor de 1.5fr para 1.8fr para dar mais espaço à sua logo maior */
+    grid-template-columns: 1.8fr 1.2fr 1fr 1fr 1fr; 
     gap: 24px;
     width: 100%;
-    padding-top: 35px; /* Empurra os textos para baixo para alinharem visualmente com o logo */
+    /* Removido o padding-top: 35px, pois agora estamos a usar a classe 'mt-12' no HTML */
 }
 
 .footer-column {
@@ -166,7 +149,7 @@
     font-weight: 600;
     font-size: 13px;
     width: fit-content;
-    margin-top: 10px;
+    /* margin-top removido pois estamos a usar 'mt-6' no HTML */
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(255, 194, 14, 0.2);
 }
@@ -212,29 +195,20 @@
 /* Responsividade Aprimorada */
 @media (max-width: 1100px) {
     .footer-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+        grid-template-columns: repeat(3, 1fr); 
     }
 }
 
 @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column;
-        align-items: center;
         padding: 0 24px 40px 24px;
-    }
-    .footer-logo-wrapper {
-        margin-top: 20px; /* Desce um pouco o logo no telemóvel */
     }
     .footer-grid {
         grid-template-columns: 1fr; /* 1 coluna no telemóvel */
-        text-align: center;
-        padding-top: 20px;
+        gap: 32px; /* Um pouco mais de espaço entre os blocos no telemóvel */
     }
     .info-item {
-        justify-content: center;
-    }
-    .social-icons {
-        justify-content: center;
+        justify-content: flex-start; /* Mantém os ícones alinhados à esquerda em vez de centralizar */
     }
     .hide-mobile {
         display: none;
