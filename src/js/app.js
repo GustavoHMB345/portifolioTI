@@ -197,8 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
         description: "Plataforma SaaS sazonal para gerenciar inscrições de projetos, cronogramas e mapas de estandes durante as Feiras de Ciências e Eventos Culturais. Conta com votação em tempo real via QR Code escaneado pelos visitantes.",
         techStack: ["HTML/CSS", "Javascript"],
         gallery: [
-            "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?q=80&w=600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=600&auto=format&fit=crop"
+            "assets/images/fair_tela1.png", 
+            "assets/images/fair_tela2.png",
+            "assets/images/fair_tela3.png"
         ]
     },
     "sisanet": {
@@ -222,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
         catClass: "text-bright-yellow border-bright-yellow/30",
         coverImage: "assets/images/tickets_capa.png",
         description: "Plataforma oficial para venda e emissão de ingressos digitais para os eventos da escola, como feiras de ciências, peças de teatro e festas de encerramento.\n\nO sistema elimina a necessidade de bilhetes de papel, gerando um QR Code único para cada participante, que é lido rapidamente na portaria através de qualquer smartphone pelos inspetores.",
-        techStack: ["Next.js", "Firebase", "Stripe API", "TailwindCSS"],
+        techStack: ["Dart", "Firebase", "HTML/CSS", "TailwindCSS"],
         gallery: [
             "assets/images/ingressos_tela1.png",
             "assets/images/ingressos_tela2.png"
