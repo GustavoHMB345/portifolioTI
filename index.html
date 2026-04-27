@@ -47,8 +47,6 @@
       <div class="hidden md:flex gap-8 items-center">
         <a href="#projetos" class="text-gray-400 hover:text-bright-yellow transition-colors font-medium text-sm">Projetos</a>
         <a href="#documentacao" class="text-gray-400 hover:text-bright-yellow transition-colors font-medium text-sm">Documentação</a>
-          </div>
-        </div>
       </div>
     </div>
   </nav>
@@ -150,7 +148,7 @@
             <img src="assets/images/login_pp.png" alt="Portal PP" class="project-image w-full h-full object-contain scale-140 opacity-70 group-hover:opacity-100 transform transition-transform duration-500 group-hover:scale-150 z-0">
             
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80 pointer-events-none"></div>
-            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-purple border border-bright-purple/30 shadow-sm z-10">
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold tag-pedagogico border shadow-sm z-10">
               Pedagógico
             </div>
           </div>
@@ -171,8 +169,7 @@
           <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
             <img src="assets/images/reservas_tela2.png" alt="Reservas de Chromebooks" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
-            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-yellow border border-bright-yellow/30 shadow-sm">
-              Infraestrutura
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-blue-400 border border-blue-400/30 shadow-sm">Infraestrutura
             </div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
@@ -194,18 +191,18 @@
             
             <img src="assets/images/sisanet.png" alt="SISANET - BBS" class="project-image w-full h-full object-contain scale-120 opacity-70 group-hover:opacity-100 transform transition-transform duration-500 group-hover:scale-120 z-0">
             
+            <div class="absolute inset-0 z-0 pointer-events-none sisanet-breathe"></div>
+
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80 pointer-events-none z-0"></div>
             
             <div class="absolute top-4 right-4 flex gap-2 z-10">
-              
-              <div class="bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-yellow border border-bright-yellow/30 shadow-sm">
+              <div class="bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-blue-400 border border-blue-400/30 shadow-sm">
                 Infraestrutura
               </div>
               
               <div class="bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-red border border-bright-red/30 shadow-sm">
                 Acadêmico
               </div>
-
             </div>
           </div>
 
@@ -292,7 +289,7 @@
             <img src="assets/images/psicologia_tela3.png" alt="Atendimento Psicologia" class="project-image w-full h-full object-contain scale-120 opacity-70 group-hover:opacity-100 transform transition-transform duration-500 group-hover:scale-120 z-0">
             
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80 pointer-events-none"></div>
-            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-purple border border-bright-purple/30 shadow-sm z-10">
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold tag-pedagogico border shadow-sm z-10">
               Pedagógico
             </div>
           </div>
@@ -490,30 +487,42 @@
                       </div>
                   </div>
 
-                  <div class="space-y-6">
+                  <div class="space-y-6 flex flex-col">
+                      
+                      <div id="modalDevContainer" class="bg-black/30 p-5 rounded-xl border border-white/5">
+                          <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Responsável Técnico</h4>
+                          <div class="flex items-center gap-3">
+                              <div id="modalDevAvatar" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg border shrink-0 transition-all duration-300">
+                              </div>
+                              <div>
+                                  <p id="modalDevName" class="text-sm font-bold text-gray-200"></p>
+                                  <p id="modalDevRole" class="text-xs text-gray-500"></p>
+                              </div>
+                          </div>
+                      </div>
+
                       <div class="bg-black/30 p-5 rounded-xl border border-white/5">
                           <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Stack Tecnológica</h4>
                           <div id="modalTech" class="flex flex-wrap gap-2">
-                              </div>
+                          </div>
                       </div>
 
                       <div class="pt-6 mt-auto">
-    <div class="w-full flex items-center justify-center flex-wrap gap-3 bg-white/5 backdrop-blur-md text-gray-400 border border-dashed border-white/20 py-3.5 px-4 rounded-xl cursor-not-allowed">
-        
-        <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 opacity-60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-            <span class="font-semibold text-sm whitespace-nowrap">Documentação</span>
-        </div>
+                          <div class="w-full flex items-center justify-center flex-wrap gap-3 bg-white/5 backdrop-blur-md text-gray-400 border border-dashed border-white/20 py-3.5 px-4 rounded-xl cursor-not-allowed">
+                              <div class="flex items-center gap-2">
+                                  <svg class="w-5 h-5 opacity-60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                  <span class="font-semibold text-sm whitespace-nowrap">Documentação</span>
+                              </div>
+                              <span class="bg-bright-yellow/10 text-bright-yellow border border-bright-yellow/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 shrink-0">
+                                  <span class="flex h-1.5 w-1.5 relative shrink-0">
+                                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bright-yellow opacity-75"></span>
+                                      <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-bright-yellow"></span>
+                                  </span>
+                                  Em Produção
+                              </span>
+                          </div>
+                      </div>
 
-        <span class="bg-bright-yellow/10 text-bright-yellow border border-bright-yellow/20 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 shrink-0">
-            <span class="flex h-1.5 w-1.5 relative shrink-0">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bright-yellow opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-bright-yellow"></span>
-            </span>
-            Em Produção
-        </span>
-    </div>
-</div>
                   </div>
               </div>
           </div>

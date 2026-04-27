@@ -205,68 +205,155 @@ function initProjectModal() {
         }
     });
 
+    // ==========================================
+    // FUNÇÃO CENTRAL DE HIDRATAÇÃO DO MODAL
+    // ==========================================
     function hydrateProjectModal(projectData) {
-        const titleElement = document.getElementById('modalTitle');
-        const categoryContainer = document.getElementById('modalCategory');
-        const coverElement = document.getElementById('modalCover');
-        const descriptionElement = document.getElementById('modalDesc');
-        const techContainer = document.getElementById('modalTech');
-        const galleryContainer = document.getElementById('modalGallery');
+    const titleElement = document.getElementById('modalTitle');
+    const categoryContainer = document.getElementById('modalCategory');
+    const coverElement = document.getElementById('modalCover');
+    const descriptionElement = document.getElementById('modalDesc');
+    const techContainer = document.getElementById('modalTech');
+    const galleryContainer = document.getElementById('modalGallery');
+    
+    // Elementos do Desenvolvedor
+    const devContainer = document.getElementById('modalDevContainer');
+    const devAvatar = document.getElementById('modalDevAvatar');
+    const devName = document.getElementById('modalDevName');
+    const devRole = document.getElementById('modalDevRole');
 
-        if (titleElement) titleElement.textContent = projectData.title;
+    // 1. Título e Descrição
+    if (titleElement) titleElement.textContent = projectData.title;
+    if (coverElement) coverElement.src = projectData.coverImage;
+    if (descriptionElement) descriptionElement.textContent = projectData.description;
 
-        if (categoryContainer) {
-            categoryContainer.innerHTML = '';
-            categoryContainer.className = 'flex flex-wrap gap-2 mb-3';
+    // 2. Categorias
+    if (categoryContainer) {
+        categoryContainer.innerHTML = '';
+        categoryContainer.className = 'flex flex-wrap gap-2 mb-3';
 
-            if (projectData.categories) {
-                projectData.categories.forEach((category) => {
-                    categoryContainer.innerHTML += `<span class="px-3 py-1.5 rounded-md text-xs font-semibold border shadow-sm bg-bright-bg/90 backdrop-blur-md ${category.style}">${category.name}</span>`;
-                });
-            } else if (projectData.category) {
-                categoryContainer.innerHTML = `<span class="px-3 py-1.5 rounded-md text-xs font-semibold border shadow-sm bg-bright-bg/90 backdrop-blur-md ${projectData.catClass}">${projectData.category}</span>`;
-            }
-        }
-
-        if (coverElement) coverElement.src = projectData.coverImage;
-        if (descriptionElement) descriptionElement.textContent = projectData.description;
-
-        if (techContainer && projectData.techStack) {
-            techContainer.innerHTML = '';
-            projectData.techStack.forEach((tech) => {
-                techContainer.innerHTML += `<span class="text-xs font-mono bg-bright-card text-gray-300 border border-bright-dark px-2.5 py-1 rounded-md shadow-sm">${tech}</span>`;
+        if (projectData.categories) {
+            projectData.categories.forEach((category) => {
+                categoryContainer.innerHTML += `<span class="px-3 py-1.5 rounded-md text-xs font-semibold border shadow-sm bg-bright-bg/90 backdrop-blur-md ${category.style}">${category.name}</span>`;
             });
-        }
-
-        if (galleryContainer && projectData.gallery) {
-            galleryContainer.innerHTML = '';
-            currentGallery = projectData.gallery;
-
-            projectData.gallery.forEach((image, index) => {
-                galleryContainer.innerHTML += `
-                    <div class="h-32 sm:h-40 rounded-xl overflow-hidden border border-bright-dark relative group cursor-pointer shadow-sm gallery-item" data-index="${index}">
-                        <img src="${image}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                            <i class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 transition-all transform scale-50 group-hover:scale-100 text-3xl"></i>
-                        </div>
-                    </div>`;
-            });
+        } else if (projectData.category) {
+            categoryContainer.innerHTML = `<span class="px-3 py-1.5 rounded-md text-xs font-semibold border shadow-sm bg-bright-bg/90 backdrop-blur-md ${projectData.catClass}">${projectData.category}</span>`;
         }
     }
 
+    // 3. Desenvolvedor 
+    const categoryAvatarColors = {
+        pedagogico: 'avatar-theme-pedagogico',
+        eventos: 'avatar-theme-eventos',
+        academico: 'avatar-theme-academico',
+        infraestrutura: 'avatar-theme-infraestrutura',
+        suporte: 'avatar-theme-suporte',
+        patrimonio: 'avatar-theme-patrimonio'
+    };
+
+    // Helpers locais para o bloco de desenvolvedor
+    function getInitials(fullName) {
+        if (!fullName || typeof fullName !== 'string') return '';
+        const parts = fullName.trim().split(/\s+/).filter(Boolean);
+        if (parts.length === 0) return '';
+        if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+        return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+    }
+
+    function normalizeKey(str) {
+        if (!str || typeof str !== 'string') return '';
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    }
+
+    function applyThemeToAvatar(avatarEl, themeClass, animate) {
+        // Ensure base visual class present
+        avatarEl.classList.add('modal-dev-avatar-base');
+
+        // Remove previously applied theme class
+        const prev = avatarEl.dataset.theme || '';
+        if (prev) avatarEl.classList.remove(prev);
+
+        // Apply new theme class (single token)
+        const theme = themeClass || 'avatar-theme-default';
+        avatarEl.classList.add(theme);
+        avatarEl.dataset.theme = theme;
+
+        // Toggle animation
+        if (animate) avatarEl.classList.add('dev-avatar-animation'); else avatarEl.classList.remove('dev-avatar-animation');
+    }
+
+    if (devContainer && devAvatar && devName && devRole) {
+        if (projectData.developer && typeof projectData.developer === 'object') {
+            const dev = projectData.developer || {};
+            const name = dev.name || '';
+            const role = dev.role || '';
+
+            devName.textContent = name;
+            devRole.textContent = role;
+
+            // initials
+            const initials = getInitials(name) || '';
+            devAvatar.textContent = initials;
+
+            // Determine category key
+            let rawCategory = '';
+            if (projectData.categories && projectData.categories.length > 0) rawCategory = projectData.categories[0].name || '';
+            else if (projectData.category) rawCategory = projectData.category;
+
+            const safeCategory = normalizeKey(rawCategory);
+            const theme = categoryAvatarColors[safeCategory] || 'text-gray-300 border-white/10 bg-white/5';
+
+            const animate = (projectData.categories && projectData.categories.length >= 2);
+
+            applyThemeToAvatar(devAvatar, theme, animate);
+
+            devContainer.style.display = '';
+        } else {
+            devContainer.style.display = 'none';
+            if (devAvatar) devAvatar.textContent = '';
+            if (devName) devName.textContent = '';
+            if (devRole) devRole.textContent = '';
+        }
+    }
+
+    // 4. Tecnologias
+    if (techContainer && projectData.techStack) {
+        techContainer.innerHTML = '';
+        projectData.techStack.forEach((tech) => {
+            techContainer.innerHTML += `<span class="text-xs font-mono bg-bright-card text-gray-300 border border-bright-dark px-2.5 py-1 rounded-md shadow-sm">${tech}</span>`;
+        });
+    }
+
+    // 5. Galeria
+    if (galleryContainer && projectData.gallery) {
+        galleryContainer.innerHTML = '';
+        currentGallery = projectData.gallery; // Atualiza a variável global/escopo da galeria
+
+        projectData.gallery.forEach((image, index) => {
+            galleryContainer.innerHTML += `
+                <div class="h-32 sm:h-40 rounded-xl overflow-hidden border border-bright-dark relative group cursor-pointer shadow-sm gallery-item" data-index="${index}">
+                    <img src="${image}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white opacity-0 group-hover:opacity-100 transition-all transform scale-50 group-hover:scale-100 text-3xl"></i>
+                    </div>
+                </div>`;
+        });
+    }
+}
+
+    // ==========================================
+    // FUNÇÕES DE CONTROLE (Navegação/Fechar)
+    // ==========================================
     function updateLightboxButtons() {
         if (!previousButton || !nextButton) return;
-
         previousButton.classList.toggle('hidden', currentImageIndex === 0);
         nextButton.classList.toggle('hidden', currentImageIndex === currentGallery.length - 1);
     }
 
     function openLightbox(index) {
         if (!lightbox || !lightboxImage) return;
-
         currentImageIndex = index;
         lightboxImage.src = currentGallery[currentImageIndex];
-
         updateLightboxButtons();
 
         lightbox.classList.remove('opacity-0', 'pointer-events-none');
@@ -285,9 +372,8 @@ function initProjectModal() {
         setTimeout(() => {
             currentImageIndex += direction === 'next' ? 1 : -1;
             lightboxImage.src = currentGallery[currentImageIndex];
-
             updateLightboxButtons();
-
+            
             lightboxImage.classList.remove('scale-95', 'opacity-0');
             lightboxImage.classList.add('scale-100');
         }, 200);
@@ -295,7 +381,6 @@ function initProjectModal() {
 
     function closeModal() {
         if (!modal || !modalBox) return;
-
         modal.classList.add('opacity-0', 'pointer-events-none');
         modalBox.classList.remove('scale-100');
         modalBox.classList.add('scale-95');
@@ -304,12 +389,9 @@ function initProjectModal() {
 
     function closeLightbox() {
         if (!lightbox || !lightboxImage) return;
-
         lightbox.classList.add('opacity-0', 'pointer-events-none');
         lightboxImage.classList.remove('scale-100');
         lightboxImage.classList.add('scale-95');
-        setTimeout(() => {
-            lightboxImage.src = '';
-        }, 300);
+        setTimeout(() => { lightboxImage.src = ''; }, 300);
     }
 }

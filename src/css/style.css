@@ -217,3 +217,57 @@
         display: none;
     }
 }
+
+/* ==========================================
+   EFEITOS ESPECIAIS DE PROJETOS HÍBRIDOS (AVATAR)
+   ========================================== */
+
+@keyframes dev-avatar-breathe {
+    /* Estado Inicial/Final: Luz Azul Suave (Infraestrutura) */
+    0%, 100% { 
+        border-color: rgba(96, 165, 250, 0.4); /* Contorno azul sutil (blue-400) */
+        box-shadow: inset 0 0 10px rgba(96, 165, 250, 0.3), 0 0 15px rgba(96, 165, 250, 0.25); /* Brilho interno e externo azul sutil */
+    }
+    /* Metade do ciclo: Luz Vermelha Suave (Acadêmico) */
+    50% { 
+        border-color: rgba(239, 70, 75, 0.4); /* Contorno vermelho sutil (bright-red) */
+        box-shadow: inset 0 0 10px rgba(239, 70, 75, 0.3), 0 0 15px rgba(239, 70, 75, 0.25); /* Brilho interno e externo vermelho sutil */
+    }
+}
+
+.dev-avatar-animation {
+    /* Duração de 4 segundos para uma transição suave e sutil */
+    animation: dev-avatar-breathe 4s infinite ease-in-out;
+    mix-blend-mode: screen; /* Faz o brilho fundir-se de forma mais natural no fundo escuro */
+}
+
+/* Avatar theme classes: separação de estilo para aplicação pelo JS via className */
+.avatar-theme-pedagogico { color: #ad82f8; border-color: rgba(173,130,248,0.25); background-color: rgba(173,130,248,0.06); }
+.avatar-theme-eventos { color: #f59e0b; border-color: rgba(245,158,11,0.25); background-color: rgba(245,158,11,0.06); }
+.avatar-theme-academico { color: #ef4444; border-color: rgba(239,68,68,0.25); background-color: rgba(239,68,68,0.06); }
+.avatar-theme-infraestrutura { color: #60a5fa; border-color: rgba(96,165,250,0.25); background-color: rgba(96,165,250,0.06); }
+.avatar-theme-suporte { color: #06b6d4; border-color: rgba(6,182,212,0.25); background-color: rgba(6,182,212,0.06); }
+.avatar-theme-patrimonio { color: #fb923c; border-color: rgba(251,146,60,0.25); background-color: rgba(251,146,60,0.06); }
+.avatar-theme-default { color: #d1d5db; border-color: rgba(255,255,255,0.08); background-color: rgba(255,255,255,0.02); }
+
+/* Ensure avatar base styles are present if JS hasn't applied them */
+.modal-dev-avatar-base {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    line-height: 2.5rem; /* ensure vertical centering for text fallback */
+    text-align: center;
+}
+
+/* Badge / tag style for Pedagógico category */
+.tag-pedagogico {
+    color: #ad82f8;
+    border-color: rgba(173,130,248,0.25) !important;
+    background-color: rgba(173,130,248,0.06);
+}
