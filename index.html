@@ -47,60 +47,6 @@
       <div class="hidden md:flex gap-8 items-center">
         <a href="#projetos" class="text-gray-400 hover:text-bright-yellow transition-colors font-medium text-sm">Projetos</a>
         <a href="#documentacao" class="text-gray-400 hover:text-bright-yellow transition-colors font-medium text-sm">Documentação</a>
-        
-        <div class="relative">
-          <button id="statusDropdownBtn" class="flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10 px-3 py-1.5 rounded-full transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-bright-yellow/50">
-            <span class="relative flex h-2.5 w-2.5">
-              <span id="globalPing" class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span id="globalStatus" class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 transition-colors duration-300"></span>
-            </span>
-            <span class="text-xs font-medium text-gray-300">Status dos Sistemas</span>
-            <svg class="w-3.5 h-3.5 text-gray-400 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </button>
-
-          <div id="statusDropdown" class="hidden absolute right-0 mt-3 w-72 bg-bright-card border border-white/10 rounded-xl shadow-2xl overflow-hidden z-50 origin-top-right transition-all">
-            <div class="px-4 py-3 border-b border-white/5 bg-white/5 flex justify-between items-center">
-              <h3 class="text-sm font-semibold text-gray-100">Controle de Serviços</h3>
-              <span class="text-[10px] font-mono bg-white/10 px-2 py-0.5 rounded text-gray-400">ADMIN</span>
-            </div>
-            
-            <div class="p-2 space-y-1">
-              <div class="flex items-center justify-between p-2.5 hover:bg-white/5 rounded-lg transition-colors">
-                <div class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-green-500 service-indicator transition-colors duration-300"></div>
-                  <span class="text-sm text-gray-300 font-medium">Portal Acadêmico</span>
-                </div>
-                <label class="relative inline-flex items-center cursor-pointer">
-                  <input type="checkbox" class="sr-only peer toggle-service" checked>
-                  <div class="w-9 h-5 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-bright-yellow"></div>
-                </label>
-              </div>
-
-              <div class="flex items-center justify-between p-2.5 hover:bg-white/5 rounded-lg transition-colors">
-                <div class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-green-500 service-indicator transition-colors duration-300"></div>
-                  <span class="text-sm text-gray-300 font-medium">Gestão de Receitas</span>
-                </div>
-                <label class="relative inline-flex items-center cursor-pointer">
-                  <input type="checkbox" class="sr-only peer toggle-service" checked>
-                  <div class="w-9 h-5 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-bright-yellow"></div>
-                </label>
-              </div>
-
-              <div class="flex items-center justify-between p-2.5 hover:bg-white/5 rounded-lg transition-colors">
-                <div class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-green-500 service-indicator transition-colors duration-300"></div>
-                  <span class="text-sm text-gray-300 font-medium">Workspace Sync</span>
-                </div>
-                <label class="relative inline-flex items-center cursor-pointer">
-                  <input type="checkbox" class="sr-only peer toggle-service" checked>
-                  <div class="w-9 h-5 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-bright-yellow"></div>
-                </label>
-              </div>
-            </div>
-            <div class="px-4 py-2 border-t border-white/5 bg-white/5 text-center">
-              <span id="systemMessage" class="text-[10px] text-gray-400">Todos os sistemas operacionais.</span>
-            </div>
           </div>
         </div>
       </div>
@@ -168,8 +114,9 @@
             <p class="text-gray-400 text-sm mb-6 flex-grow">Sistema de helpdesk para abertura, acompanhamento e resolução de chamados internos de T.I e manutenção.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Node.js</span>
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">React</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Dart</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Firebase</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">HTML/CSS</span>
               </div>
               <button data-id="chamados" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
@@ -178,7 +125,7 @@
 
         <article data-category="patrimonio" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
           <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop" alt="Bright Inventory" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <img src="assets/images/login_inventory.png" alt="Bright Inventory" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
             <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-orange border border-bright-orange/30 shadow-sm">
               Patrimônio
@@ -189,8 +136,8 @@
             <p class="text-gray-400 text-sm mb-6 flex-grow">Plataforma centralizada para gestão de ativos, controle de estoque de hardware e rastreamento de equipamentos.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Python</span>
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">PostgreSQL</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">JAVA</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">MySQL</span>
               </div>
               <button data-id="inventory" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
@@ -212,8 +159,8 @@
             <p class="text-gray-400 text-sm mb-6 flex-grow">Portal de Práticas Pedagógicas. Acesso exclusivo para o corpo docente gerenciar planos de aula e recursos.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Next.js</span>
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Tailwind</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">HTML/CSS</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Javascript</span>
               </div>
               <button data-id="portal-pp" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
@@ -222,7 +169,7 @@
 
         <article data-category="infraestrutura" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
           <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="Reservas de Chromebooks" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <img src="assets/images/reservas_capa.png" alt="Reservas de Chromebooks" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
             <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
             <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-yellow border border-bright-yellow/30 shadow-sm">
               Infraestrutura
@@ -233,10 +180,44 @@
             <p class="text-gray-400 text-sm mb-6 flex-grow">Sistema automatizado de agendamento de carrinhos móveis de Chromebooks para uso em sala de aula.</p>
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Apps Script</span>
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">API</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">HTML/CSS</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Javascript</span> 
               </div>
               <button data-id="reservas" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="infraestrutura academico" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+          
+          <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative flex items-center justify-center">
+            
+            <img src="assets/images/sisanet.png" alt="SISANET - BBS" class="project-image w-full h-full object-contain scale-120 opacity-70 group-hover:opacity-100 transform transition-transform duration-500 group-hover:scale-120 z-0">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80 pointer-events-none z-0"></div>
+            
+            <div class="absolute top-4 right-4 flex gap-2 z-10">
+              
+              <div class="bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-yellow border border-bright-yellow/30 shadow-sm">
+                Infraestrutura
+              </div>
+              
+              <div class="bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-red border border-bright-red/30 shadow-sm">
+                Acadêmico
+              </div>
+
+            </div>
+          </div>
+
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">SISANET - BBS</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Sistema de Análise de Equipamentos Tecnológicos.</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex gap-2">
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Python</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">MySQL</span>
+              </div>
+              <button data-id="sisanet" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
           </div>
         </article>
@@ -255,7 +236,7 @@
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Java</span>
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Spring</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">MySQL</span>
               </div>
               <button data-id="library" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
@@ -276,9 +257,53 @@
             <div class="flex items-center justify-between pt-4 border-t border-white/5">
               <div class="flex gap-2">
                 <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">HTML/CSS</span>
-                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Firebase</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Javascript</span>
               </div>
               <button data-id="fair" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="eventos" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+          <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative">
+            <img src="" alt="Bright Tickets" class="project-image w-full h-full object-cover opacity-70 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80"></div>
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-yellow border border-bright-yellow/30 shadow-sm">
+              Eventos
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Bright Tickets</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">Compra e venda de ingresso</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex gap-2">
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">HTML/CSS</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Firebase</span>
+              </div>
+              <button data-id="tickets-ingressos" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article data-category="pedagogico" class="project-card bg-bright-card rounded-2xl overflow-hidden flex flex-col group">
+          <div class="project-image-wrapper h-52 w-full bg-gray-900 overflow-hidden relative flex items-center justify-center">
+            
+            <img src="assets/images/psico_capa.png" alt="Atendimento Psicologia" class="project-image w-full h-full object-contain scale-120 opacity-70 group-hover:opacity-100 transform transition-transform duration-500 group-hover:scale-120 z-0">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-bright-card to-transparent opacity-80 pointer-events-none"></div>
+            <div class="absolute top-4 right-4 bg-bright-card/90 backdrop-blur-md px-3 py-1.5 rounded-md text-xs font-semibold text-bright-purple border border-bright-purple/30 shadow-sm z-10">
+              Pedagógico
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-heading text-xl font-bold text-gray-100 mb-2">Atendimento Psicologia</h3>
+            <p class="text-gray-400 text-sm mb-6 flex-grow">App de resgitros de atendimentos em planilha</p>
+            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+              <div class="flex gap-2">
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Next.js</span>
+                <span class="text-xs font-mono bg-white/5 text-gray-300 border border-white/10 px-2.5 py-1 rounded-md">Tailwind</span>
+              </div>
+              <button data-id="psicologia" class="open-modal-btn text-bright-orange hover:text-orange-400 font-medium text-sm flex items-center gap-1 transition-colors focus:outline-none">Ver Mais <span class="text-lg">→</span></button>
             </div>
           </div>
         </article>
