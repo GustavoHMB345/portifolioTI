@@ -184,12 +184,17 @@ As regras de negocio (limites de vagas, turmas autorizadas e restricoes) estao c
     category: "Eventos",
     developer: { name: "Flávio Dias", role: "Desenvolvedor full-stack" },
     catClass: "text-bright-yellow border-bright-yellow/30",
-    coverImage: "assets/images/tickets_capa.png",
+    coverImage: "https://static.kiaga.com.br/public/kiaga/imagens/produtos/0b2a54d4b7a196e3d2e76d6f9dec4585.jpg",
     description: "Plataforma oficial para venda e emissao de ingressos digitais para os eventos da escola, como feiras de ciencias, pecas de teatro e festas de encerramento.\n\nO sistema elimina a necessidade de bilhetes de papel, gerando um QR Code unico para cada participante, que e lido rapidamente na portaria atraves de qualquer smartphone pelos inspetores.",
     techStack: ["Dart", "Firebase", "HTML/CSS", "TailwindCSS"],
     gallery: [
-      "assets/images/ingressos_tela1.png",
-      "assets/images/ingressos_tela2.png"
+      "assets/images/logo_tickets.jpeg",
+      "assets/images/tickets_tela1.jpeg",
+      "assets/images/tickets_tela2.jpeg",
+      "assets/images/tickets_tela3.jpeg",
+      "assets/images/tickets_tela4.jpeg",
+      "assets/images/tickets_tela5.jpeg",
+      "assets/images/tickets_tela6.jpeg"
     ]
   },
   "psicologia": {
